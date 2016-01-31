@@ -2,16 +2,12 @@ package game;
 
 import game.Player.PlayerBuilder;
 import game.GameEngine.GameBuilder;
-import game.Login;
 
 import java.util.Scanner;
 
 public class Main {
 
-
 	public static void main (String[] args){
-		
-		
 		
 		Scanner user_input = new Scanner( System.in );
 		String user_name, saveStringGameSelection, humanStringUsers;
@@ -19,7 +15,6 @@ public class Main {
 		
 		System.out.println("Insert your name");
 		user_name = user_input.next( );
-		public checkLogin(String user_name,String user_name);
 		
 		
 		//String name;
@@ -31,7 +26,14 @@ public class Main {
 				+ "\t" + "2 - BlackJak");
 		saveStringGameSelection = user_input.next( );
 		saveGameSelection = Integer.parseInt(saveStringGameSelection);
-
+		if(saveGameSelection == 1){
+			GameBuilder sueca = new GameBuilder(AvailableGames.SUECA, "sueca");
+			AbstractGameRules suecaRules = new GameSueca();
+			suecaRules.printRules();
+		}
+		else if (saveGameSelection == 2){
+			GameBuilder sueca = new GameBuilder(AvailableGames.BLACKJACK, "blackjack");
+		}
 
 		//list of players is return from game
 		System.out.println("Number of Human Users");
@@ -40,13 +42,13 @@ public class Main {
 		
 		
 		if (humanUsers == 1){
-			System.out.println("\n 1 Human User Selected");
+			System.out.println("\n 1 Human User was Selected \n");
 
-		    PlayerBuilder human = new PlayerBuilder(PlayerType.HUMAN, user_name);
-		    PlayerBuilder Automated1 = new PlayerBuilder(PlayerType.AUTOMATED, "Bad1");
-		    PlayerBuilder Automated2 = new PlayerBuilder(PlayerType.AUTOMATED, "Bad2");
-		    PlayerBuilder Automated3 = new PlayerBuilder(PlayerType.AUTOMATED, "Bad3");
-		    System.out.println("\n Your opponents are Bad1, Bad2 and Bad3");
+		    Player human = new PlayerBuilder(PlayerType.HUMAN, user_name).build();
+		    Player Automated1 = new PlayerBuilder(PlayerType.MACHINE, "Bad1").build();
+		    Player Automated2 = new PlayerBuilder(PlayerType.MACHINE, "Bad2").build();
+		    Player Automated3 = new PlayerBuilder(PlayerType.MACHINE, "Bad3").build();
+		    System.out.println(human+ ", your opponents are " +Automated1+ " and "+Automated2+ " and "+Automated3 );
 		}
 		else{
 			System.out.println("\n" + humanUsers + " Human User Selected");

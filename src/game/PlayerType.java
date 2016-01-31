@@ -1,9 +1,10 @@
 package game;
 
 public enum PlayerType {
-	HUMAN, AUTOMATED;
+	HUMAN, MACHINE;
 	@Override
 	public String toString() {
 	return name().toLowerCase();
 	}
+	
 }
