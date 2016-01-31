@@ -1,6 +1,6 @@
 package game;
 
-//There is no advantage to use this builder patter to list games.
+//There is no advantage to use this builder pattern to list games.
 //It was not removed because it is required to follow "Enunciado do Projecto" proposal.
 public enum AvailableGames {
 

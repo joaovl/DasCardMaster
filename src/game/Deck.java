@@ -3,69 +3,27 @@ package game;
 //Use of object factory
 public class Deck 
 {
-	private final CardList fDeck;
 
-	/**
-	 * Creates a new deck of 52 cards, not shuffled.
-	 */
-	public Deck()
-	{
-		fDeck = new CardList(Constants.NUMBER_OF_CARDS);
-		refillDeck();
-	}
 
-	/**
-	 * Utility function : Clear and refill deck with all cards.
-	 */
-	private void refillDeck()
-	{
-		fDeck.clear();
-		for (Card.Suit suit : Card.Suit.values())
-		{
-			for (Card.Rank rank : Card.Rank.values())
-			{
-				fDeck.add(new Card(rank, suit));
-			}
-		}
-	}
-
-	/**
-	 * Refill and shuffle the deck of cards by randomizing
-	 * their order.
-	 */
+//I need to give this function the number of cards available 
+		//and if it is required to dived them by the number of users
+	//CardList(Constants.NUMBER_OF_CARDS
 	public void shuffle()
 	{
-		refillDeck();
-		fDeck.shuffle();
+		CardList.shefull();
 	}
 
-	/**
-	 * Draws a card from the deck and removes the card from the deck.
-	 * @return The card drawn.
-	 * @throws EmptyDeckException if called on an empty deck.
-	 * @post final.size() == initial.size() - 1 or exception
-	 */
-	public Card draw()
-	{
-		return fDeck.remove(0);
-	}
 
-	/**
-	 * Returns the size of the deck.
-	 * @return The number of cards in the deck.
-	 */
-	public int size()
-	{
-		return fDeck.size();
-	}
-
-	/**
-	 * @return Returns true if the deck is empty.
-	 */
-	public boolean isEmpty()
-	{
-		return fDeck.isEmpty();
-	}
+//	public int size()
+//	{
+//		return fDeck.size();
+//	}
+//
+//
+//	public boolean isEmpty()
+//	{
+//		return fDeck.isEmpty();
+//	}
 }
 
 
