@@ -17,7 +17,7 @@ public class GameEngine {
   public String toString() {
 
     StringBuilder sb = new StringBuilder();
-    sb.append("This is a ")
+    sb.append("A ")
             .append(gameType)
             .append(" named ")
             .append(name);

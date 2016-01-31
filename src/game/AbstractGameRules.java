@@ -14,7 +14,6 @@ public abstract class AbstractGameRules {
 	
 	
 	//this is the template method
-	
 	public final void printRules(){
 		numberOfGamesPerSession();
 		numberOfValidPlays();

@@ -2,12 +2,16 @@ package game;
 
 import game.Player.PlayerBuilder;
 import game.GameEngine.GameBuilder;
+import game.Deck;
 
 import java.util.Scanner;
 
 public class Main {
+	private static Deck fDeck;
 
 	public static void main (String[] args){
+		
+		fDeck = new Deck();
 		
 		Scanner user_input = new Scanner( System.in );
 		String user_name, saveStringGameSelection, humanStringUsers;
@@ -20,10 +24,8 @@ public class Main {
 		//String name;
 		System.out.println("Hi" + user_name + " which game would you like to start?");
 
-		//TODO - List games available
-		System.out.println("List of Available Games:" + "\n"
-				+ "\t" + "1 - Sueca"+ "\n"
-				+ "\t" + "2 - BlackJak");
+		AvailableGames.printAvailableGames();
+		
 		saveStringGameSelection = user_input.next( );
 		saveGameSelection = Integer.parseInt(saveStringGameSelection);
 		if(saveGameSelection == 1){
@@ -48,7 +50,7 @@ public class Main {
 		    Player Automated1 = new PlayerBuilder(PlayerType.MACHINE, "Bad1").build();
 		    Player Automated2 = new PlayerBuilder(PlayerType.MACHINE, "Bad2").build();
 		    Player Automated3 = new PlayerBuilder(PlayerType.MACHINE, "Bad3").build();
-		    System.out.println(human+ ", your opponents are " +Automated1+ " and "+Automated2+ " and "+Automated3 );
+		    System.out.println(human +"\n" + Automated1 + "\n" + Automated2 + "\n and " + Automated3 );
 		}
 		else{
 			System.out.println("\n" + humanUsers + " Human User Selected");
