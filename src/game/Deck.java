@@ -10,7 +10,7 @@ public class Deck
 	//CardList(Constants.NUMBER_OF_CARDS
 	public void shuffle()
 	{
-		CardList.shefull();
+		CardList.shuffle();
 	}
 
 

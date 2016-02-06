@@ -1,9 +1,9 @@
-package Kingdom;
+package inProgress;
 
 /**
  * Created by Joao on 05/02/2016.
  */
-public interface King {
+public interface IRules {
 
     String getDescription();
 }

@@ -42,7 +42,7 @@ public class CardList implements Cloneable, Iterable<Card>
 	
 	//I need here the result of an object factory
 	//HOW??????????
-    public static List<Integer> shefull() {
+    public static List<Integer> shuffle() {
     	List<Integer> array = new ArrayList<>(40);
 
     	for (int i = 1; i <= 40; i++){ 

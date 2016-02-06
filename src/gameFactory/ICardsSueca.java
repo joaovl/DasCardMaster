@@ -1,9 +1,10 @@
-package Kingdom;
+package gameFactory;
 
 /**
  * Created by Joao on 05/02/2016.
  */
-public interface Castle {
+public interface ICardsSueca {
 
     String getDescription();
+
 }
