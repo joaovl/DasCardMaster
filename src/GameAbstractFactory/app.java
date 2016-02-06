@@ -15,15 +15,29 @@ public class app {
             factory = new GameFactorySueca();
         } else {
             //null;
-
         }
 
-        //create the game components
+        //create other game components
 
-        ICards obj = factory.createCards();
+        ICards objCards = factory.createCards();
+        IRules objRules = factory.createRules();
+        ICards obj2 = factory.createCards();
+//        ICards obj3 = factory.createCards();
+//        ICards obj4 = factory.createCards();
+
         // TODO - implement rules and AI here
 
         //show what we created:
-        System.out.println(obj.getGameCards());
+        System.out.println(objCards.getGameCards());
+        System.out.println(objCards.getShuffledCards().subList(0,10));
+        System.out.println(objRules.getGameRules());
+
+        System.out.println(objRules.maxNumberOfPlayers());
+        System.out.println(objRules.gameOrder());
+
+
+        System.out.println(obj2.getShuffledCards().subList(10,20));
+//        System.out.println(obj3.getShuffledCards().subList(20,30));
+//        System.out.println(obj4.getShuffledCards().subList(30,40));
     }
 }

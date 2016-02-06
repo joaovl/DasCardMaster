@@ -12,23 +12,13 @@ public class GameFactorySueca extends AbstractGameFactory {
         return new GameCardsSueca();
     }
 
-    /* TODO - It is required to implement Rules and AI for Abstract factory
-    public Rules createRules(){
-        return new RulesGame();
+    public IRules createRules(){
+        return new GameRulesSueca();
     }
 
-    public AI createAI(){
-        return new AIGame();
-    }*/
-
+    /* TODO - It is required to implement Rules and AI for Abstract factory */
+//    public IAI createAI(){
+//        return new GameAISueca();
+//    }
 
 }
-
-
-//public class CarFactory extends AbstractVehicleFactory {
-//
-//    public Body createBody() {
-//        return new CarBody();
-//    }
-//
-//}

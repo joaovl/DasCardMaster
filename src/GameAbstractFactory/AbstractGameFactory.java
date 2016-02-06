@@ -7,19 +7,13 @@ package GameAbstractFactory;
 //Body createBody()
 public abstract class AbstractGameFactory {
     public abstract ICards createCards();
+
+    public abstract IRules createRules();
+
     /* TODO - It is required to implement Rules and AI for Each game
-    public abstract Rules createRules();
     public abstract AI createAI();
      */
 
 
 }
 
-//
-//public abstract class AbstractVehicleFactory {
-//
-//    public abstract Body createBody();
-//    public abstract Chassis createChassis();
-//    public abstract Windows createWindows();
-//
-//}
