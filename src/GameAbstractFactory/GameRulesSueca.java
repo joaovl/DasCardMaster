@@ -18,6 +18,22 @@ public class GameRulesSueca implements IRules {
         return "Rules for Sueca game created this is CGameRulesBody";
     }
 
+
+    public String checkWhoWinnes(List<Integer> resultOfPlay){
+
+        if(resultOfPlay.get(0) > resultOfPlay.get(1)) {
+            return "Team A is the winner with : " + resultOfPlay.get(0).toString() + " points";
+        }
+        else if (resultOfPlay.get(0) < resultOfPlay.get(1)) {
+            return "Team B is the winner with : " + resultOfPlay.get(1).toString() + " points";
+        }
+        else {
+            return "Team A and B draw with : " + resultOfPlay.get(1).toString() + " points";
+        }
+    }
+
+
+    /*
     public String numberOfGamesPerSession() {
         String println = "For Sueca Game only 4 games are allowed per session";
         // TODO Auto-generated method stub
@@ -95,45 +111,6 @@ public class GameRulesSueca implements IRules {
 //        return new String(a, b, c, d, e, f, g, h, i, j);
 
     }
+    */
 
-    public String playGameSueca(List<Integer> test){
-        //show what we created:
-        List<Integer> player1 = test.subList(0, 10);
-        List<Integer> player2 = test.subList(10, 20);
-        List<Integer> player3 = test.subList(20, 30);
-        List<Integer> player4 = test.subList(30, 40);
-        System.out.println(player1);
-        System.out.println(player2);
-        System.out.println(player3);
-        System.out.println(player4);
-
-        //Start playing
-        int teamA = 0, teamB = 0;
-        for(
-                int i = 0;
-                i<10;i++)
-
-        {
-            if ((player1.get(i) + player3.get(i)) < (player2.get(i) + player4.get(i))) {
-                teamB = teamB + 2;
-            }
-
-            else if ((player1.get(i) + player3.get(i)) > (player2.get(i) + player4.get(i))) {
-                teamA = teamA + 2;
-            }
-
-            else {
-                teamA = teamA++;
-                teamB = teamB++;
-            }
-        }
-
-        if(teamA>teamB) {
-            return "Team A is the winner";
-        }
-
-        else {
-            return "Team B is the winner";
-        }
-    }
 }

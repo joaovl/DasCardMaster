@@ -11,27 +11,23 @@ public class app {
 
         AbstractGameFactory factory = null;
 
-        //create the correct 'factory'
-
         if (whatToMake.equals("Sueca")) {
             factory = new GameFactorySueca();
         } else {
             //null;
         }
 
-        //create other game components
 
         ICards objCards = factory.createCards();
-        //IRules objRules = factory.createRules();
+//        IRules objRules = factory.createRules();
+//        IAI objAI = factory.createAI();
 
 
         //I want users to use cards and check if it is a valid play.
 
-        // TODO - implement rules and AI here
-
-        //show what we created:
         List<Integer> test = objCards.getShuffledCards();
-        String printResults = factory.createRules().playGameSueca(test);
+        List<Integer> checkWinner = factory.createAI().playGameSueca(test);
+        String printResults = factory.createRules().checkWhoWinnes(checkWinner);
 
         System.out.println(printResults);
 

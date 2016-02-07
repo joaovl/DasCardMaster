@@ -1,24 +1,17 @@
 package GameAbstractFactory;
 
-import game.Card;
-import gameFactory.CardsCardsSueca;
-
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Joao on 06/02/2016.
  */
-// CarBody implements Body
-// String getBodyParts
 public class GameCardsSueca implements ICards {
 
     public String getGameCards() {
         return "Cards for Sueca game created this is CGameCardsBody";
     }
-
 
     public List<Integer> getShuffledCards(){
         return shuffle();
@@ -38,7 +31,7 @@ public class GameCardsSueca implements ICards {
     { CLUBS, DIAMONDS, SPADES, HEARTS }
 
 
-    public static List<Integer> shuffle() {
+    private static List<Integer> shuffle() {
         List<Integer> array = new ArrayList<>(MAX_CARDS);
         for (int i = 1; i <= MAX_CARDS; i++){
             array.add(i);
@@ -46,6 +39,7 @@ public class GameCardsSueca implements ICards {
         Collections.shuffle(array);
         return array;
     }
-
-
 }
+
+// CarBody implements Body
+// String getBodyParts

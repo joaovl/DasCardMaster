@@ -6,11 +6,11 @@ import java.util.List;
  * Created by Joao on 06/02/2016.
  */
 public interface IRules {
-    //public String getGameRules();
-    public String playGameSueca(List<Integer> test);
+
+    public String checkWhoWinnes(List<Integer> resultOfPlay);
 
 
-
+//    public String getGameRules();
 //    public String printRules();
 //    public String numberOfGamesPerSession();
 //    public String numberOfValidPlays();

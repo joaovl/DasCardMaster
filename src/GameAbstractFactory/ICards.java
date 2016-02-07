@@ -7,10 +7,11 @@ import java.util.List;
  */
 public interface ICards {
 
-    public String getGameCards();
-    public String toString();
     public List<Integer> getShuffledCards();
-    //public List<Integer> cardsPerPlayer(int player);
-    //public int getCards();
+
+//    public String getGameCards();
+//    public String toString();
+//    public List<Integer> cardsPerPlayer(int player);
+//    public int getCards();
 
 }
