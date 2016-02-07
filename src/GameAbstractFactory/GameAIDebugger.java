@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Joao on 07/02/2016.
  */
-public class GameAISueca implements IAI {
+public class GameAIDebugger implements IAI {
 
     private static final int MAX_TEAMS     = 2;
 
@@ -14,7 +14,7 @@ public class GameAISueca implements IAI {
         return "AI for Sueca game";
     }
 
-    public List<Integer> playGameSueca(List<Integer> test){
+    public List<Integer> playGameDebugger(List<Integer> test){
         //show what we created:
         List<Integer> player1 = test.subList(0, 10);
         List<Integer> player2 = test.subList(10, 20);

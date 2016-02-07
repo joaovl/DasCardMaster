@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by Joao on 06/02/2016.
  */
-public class GameCardsSueca implements ICards {
+public class GameCardsDebugger implements ICards {
 
     public String getGameCards() {
         return "Cards for Sueca game created this is CGameCardsBody";

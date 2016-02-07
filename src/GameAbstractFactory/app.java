@@ -7,12 +7,12 @@ import java.util.List;
  */
 public class app {
     public static void main(String[] args) {
-        String whatToMake = "Sueca";
+        String whatToMake = "Debugger";
 
         AbstractGameFactory factory = null;
 
-        if (whatToMake.equals("Sueca")) {
-            factory = new GameFactorySueca();
+        if (whatToMake.equals("Debugger")) {
+            factory = new GameFactoryDebugger();
         } else {
             //null;
         }
@@ -26,7 +26,7 @@ public class app {
         //I want users to use cards and check if it is a valid play.
 
         List<Integer> test = objCards.getShuffledCards();
-        List<Integer> checkWinner = factory.createAI().playGameSueca(test);
+        List<Integer> checkWinner = factory.createAI().playGameDebugger(test);
         String printResults = factory.createRules().checkWhoWinnes(checkWinner);
 
         System.out.println(printResults);

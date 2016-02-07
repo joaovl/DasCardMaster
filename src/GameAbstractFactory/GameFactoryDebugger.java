@@ -4,18 +4,18 @@ package GameAbstractFactory;
  * Created by Joao on 06/02/2016.
  */
 
-public class GameFactorySueca extends AbstractGameFactory {
+public class GameFactoryDebugger extends AbstractGameFactory {
 
     public ICards createCards(){
-        return new GameCardsSueca();
+        return new GameCardsDebugger();
     }
 
     public IRules createRules(){
-        return new GameRulesSueca();
+        return new GameRulesDebugger();
     }
 
     public IAI createAI(){
-        return new GameAISueca();
+        return new GameAIDebugger();
     }
 }
 

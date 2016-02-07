@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Created by Joao on 06/02/2016.
  */
-public class GameRulesSueca implements IRules {
+public class GameRulesDebugger implements IRules {
 
     public static final int NUMBER_OF_CARDS = 40;
     public static final int NUMBER_OF_TRICKS = 10;
@@ -15,7 +15,7 @@ public class GameRulesSueca implements IRules {
     public static final int CARDS_IN_HAND = 10;
 
     public String getGameRules() {
-        return "Rules for Sueca game created this is CGameRulesBody";
+        return "Rules for Debugger game created this is CGameRulesBody";
     }
 
 
