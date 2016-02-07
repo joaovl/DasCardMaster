@@ -17,8 +17,8 @@ public class GameFactorySueca extends AbstractGameFactory {
     }
 
     /* TODO - It is required to implement Rules and AI for Abstract factory */
-//    public IAI createAI(){
-//        return new GameAISueca();
-//    }
+    public IAI createAI(){
+        return new GameAISueca();
+    }
 
 }

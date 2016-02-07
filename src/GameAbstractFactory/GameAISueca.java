@@ -1,0 +1,14 @@
+package GameAbstractFactory;
+
+/**
+ * Created by Joao on 07/02/2016.
+ */
+public class GameAISueca implements IAI {
+
+    public String getGameAI() {
+        return "AI for Sueca game";
+    }
+
+
+
+}
