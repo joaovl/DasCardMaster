@@ -21,6 +21,8 @@ public class GameAIDebugger2 implements IAI {
 
         //show what we created:
         List<Integer> player1 = player.subList(0, 10);
+        //After disucssion with Marcos
+        // List<Integer> player1 = new ArrayList(player.subList(0, 10));
         List<Integer> player2 = player.subList(10, 20);
         List<Integer> player3 = player.subList(20, 30);
         List<Integer> player4 = player.subList(30, 40);
