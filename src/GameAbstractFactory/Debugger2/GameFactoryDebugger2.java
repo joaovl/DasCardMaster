@@ -1,4 +1,9 @@
-package GameAbstractFactory;
+package GameAbstractFactory.Debugger2;
+
+import GameAbstractFactory.AbstractGameFactory;
+import GameAbstractFactory.IAI;
+import GameAbstractFactory.ICards;
+import GameAbstractFactory.IRules;
 
 /**
  * Created by Joao on 08/02/2016.

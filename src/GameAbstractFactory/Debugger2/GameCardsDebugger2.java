@@ -1,4 +1,6 @@
-package GameAbstractFactory;
+package GameAbstractFactory.Debugger2;
+
+import GameAbstractFactory.ICards;
 
 import java.util.ArrayList;
 import java.util.Collections;

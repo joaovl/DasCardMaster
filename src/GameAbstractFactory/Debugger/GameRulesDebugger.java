@@ -1,4 +1,6 @@
-package GameAbstractFactory;
+package GameAbstractFactory.Debugger;
+
+import GameAbstractFactory.IRules;
 
 import java.util.List;
 
@@ -31,6 +33,10 @@ public class GameRulesDebugger implements IRules {
             return "Team A and B draw with : " + resultOfPlay.get(1).toString() + " points";
         }
     }
+
+    //Ask number of players
+
+    //
 
 
     /*

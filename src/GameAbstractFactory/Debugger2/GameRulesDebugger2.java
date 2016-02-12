@@ -1,4 +1,6 @@
-package GameAbstractFactory;
+package GameAbstractFactory.Debugger2;
+
+import GameAbstractFactory.IRules;
 
 import java.util.List;
 
