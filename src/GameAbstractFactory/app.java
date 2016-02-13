@@ -27,7 +27,15 @@ public class app {
         IAI objAI = factory.createAI();
 
 
+        int numPlayers = objRules.getMaxNumberOfPlayers();
+        System.out.println("Number of valid Players is: " + numPlayers);
+
         //ask for players
+        //TODO - This is hard codde to check that the function is working.
+        String test = objRules.checkNumberOfPlayers(4);
+        System.out.println(test);
+
+
         Player numberOfPlayer = new Player().PlayerCreator(Boolean.FALSE);
 
         //return X number of players according to the game

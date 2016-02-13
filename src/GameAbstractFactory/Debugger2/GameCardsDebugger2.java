@@ -34,11 +34,11 @@ public class GameCardsDebugger2 implements ICards {
 
 
     private static List<Integer> shuffleDebugger() {
-        List<Integer> array = new ArrayList<>(MAX_CARDS);
+        List<Integer> cardList = new ArrayList<>(MAX_CARDS);
         for (int i = 1; i <= MAX_CARDS; i++){
-            array.add(i);
+            cardList.add(i);
         }
-        Collections.shuffle(array);
-        return array;
+        Collections.shuffle(cardList);
+        return cardList;
     }
 }

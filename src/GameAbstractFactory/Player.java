@@ -24,17 +24,22 @@ public class Player {
     }
 
 
+    // TODO - Transform this into a BUILDER
+    // I Want to create a user
     public Player PlayerCreator(Boolean soloGame) {
 
         if (soloGame == true ) {
-            //Return number of players
+            //Only one player is created
 
         }else {
 
-            // TODO - Ask for registed players:
+            // TODO - Ask for registered players:
+
+            //Number of Players depends on RULES for each game
+            //Checks many Human players exist and how many are required.
+            //System creates the remaining AI users
 
 
-            //AiPlayers depends on RULES for each game
             int humanPlayer = AskNumberOfHumanPLayers();
 
             //From Rules I create = ( Number of players - Human PLayers )
@@ -50,5 +55,7 @@ public class Player {
             }
         }
         return null;
+        //Consider to return a List of players.
+        //It will be easier to assign card to each of them later on
     }
 }

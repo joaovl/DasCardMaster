@@ -8,18 +8,18 @@ import java.util.List;
 public interface IRules {
 
     public String checkWhoWinnes(List<Integer> resultOfPlay);
+    public String checkNumberOfPlayers(Integer numberOfPLayers);
+
+    public abstract int getCardsInHand();
+    public abstract int getGamePlayingOrder();
+    public abstract int getMaxNumberCardsGame();
+    public abstract int getMaxNumberCardsPlayer();
+    public abstract int getMaxNumberOfPlayers();
+    public abstract int getMaxScore();
+    public abstract int getMinNumberOfPlayers();
+    public abstract int getNumberOfCardsPassed();
+    public abstract int getValidGamesPerSession();
 
 
-//    public String getGameRules();
-//    public String printRules();
-//    public String numberOfGamesPerSession();
-//    public String numberOfValidPlays();
-//    public String maxNumberOfPlayers();
-//    public String stopPlayingDurnigSession();
-//    public String specialCardsAllowed();
-//    public String cardsValue();
-//    public String gameOrder(); //left to right OR right to left
-//    public String showTotalPoints();
-//    public String showSessionPoints();
-//    public String showActualPoints();
+
 }
