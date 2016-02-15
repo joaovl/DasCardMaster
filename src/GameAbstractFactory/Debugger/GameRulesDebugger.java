@@ -41,10 +41,20 @@ public class GameRulesDebugger extends AbstractGameRules {
         return null;
     }
 
+    @Override
+    public boolean soloGame() {
+        return false;
+    }
+
+    @Override
+    public List<Integer> validPlay(List<Integer> playerCards) {
+        return null;
+    }
+
 
     @Override
     public int getCardsInHand() {
-        return 0;
+        return 10;
     }
 
     @Override
@@ -59,12 +69,12 @@ public class GameRulesDebugger extends AbstractGameRules {
 
     @Override
     public int getMaxNumberCardsPlayer() {
-        return 0;
+        return 10;
     }
 
     @Override
     public int getMaxNumberOfPlayers() {
-        return 0;
+        return 4;
     }
 
     @Override
@@ -74,7 +84,7 @@ public class GameRulesDebugger extends AbstractGameRules {
 
     @Override
     public int getMinNumberOfPlayers() {
-        return 0;
+        return 4;
     }
 
     @Override

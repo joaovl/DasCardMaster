@@ -1,5 +1,7 @@
 package GameAbstractFactory;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -26,36 +28,48 @@ public class Player {
 
     // TODO - Transform this into a BUILDER
     // I Want to create a user
-    public Player PlayerCreator(Boolean soloGame) {
+    public List<List<Integer>> PlayerCreator(IRules objRule, ICards objCard) {
 
-        if (soloGame == true ) {
-            //Only one player is created
+        boolean soloGames = objRule.soloGame();
+        int numberHumanPlayers = AskNumberOfHumanPLayers();
+        int maxNumberOfPlayers = objRule.getMaxNumberOfPlayers();
+        int numberCardsPerPlayer = objRule.getCardsInHand();
+        List<Integer> listOfCards = objCard.getShuffledCards();
+
+        //TODO - This list should be dinamic.
+        //Later on a for cycle will create all required users (Human and AI)
+        List<Integer> player1 = null,player2 = null,player3 = null,player4 = null;
+        if (soloGames == true ) {
+            // TODO - Only one player is created
+            // This will be valid for games such as Blackjack
 
         }else {
-
-            // TODO - Ask for registered players:
-
-            //Number of Players depends on RULES for each game
             //Checks many Human players exist and how many are required.
+
             //System creates the remaining AI users
-
-
-            int humanPlayer = AskNumberOfHumanPLayers();
-
-            //From Rules I create = ( Number of players - Human PLayers )
-            //int AiPlayers =
-
-            if (humanPlayer == 1) {
-                System.out.println("\n 1 Human User was Selected \n");
-
-            } else {
-                System.out.println("\n" + humanPlayer + " Human User Selected");
-                //Create XX Human User
-                //Create YY AI users
+            //Number of Human players is equal to max of players
+            if (numberHumanPlayers == maxNumberOfPlayers ) {
+                //No AI is required.
+                //It will be asked to each user what to do
             }
+            //TODO - terrible coding, consider changing this later
+            else {
+                //This will create human and AI users
+                player1 = new ArrayList<>(listOfCards.subList(0,numberCardsPerPlayer));
+                player2 = new ArrayList<>(listOfCards.subList(numberCardsPerPlayer,(numberCardsPerPlayer*2)));
+                player3 = new ArrayList<>(listOfCards.subList((numberCardsPerPlayer*2),(numberCardsPerPlayer*3)));
+                player4 = new ArrayList<>(listOfCards.subList((numberCardsPerPlayer*3),(numberCardsPerPlayer*4)));
+            }
+
+                System.out.println("\n" + numberHumanPlayers + " Human and " +
+                        (maxNumberOfPlayers-numberHumanPlayers) + " AI users were created.");
         }
-        return null;
-        //Consider to return a List of players.
-        //It will be easier to assign card to each of them later on
+        List<List<Integer>> usersList = new ArrayList<>();
+        usersList.add(player1);
+        usersList.add(player2);
+        usersList.add(player3);
+        usersList.add(player4);
+        return usersList;
     }
+
 }

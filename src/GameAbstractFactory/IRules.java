@@ -9,6 +9,8 @@ public interface IRules {
 
     public String checkWhoWinnes(List<Integer> resultOfPlay);
     public String checkNumberOfPlayers(Integer numberOfPLayers);
+    public boolean soloGame();
+    public List<Integer> validPlay(List<Integer> playerCards);
 
     public abstract int getCardsInHand();
     public abstract int getGamePlayingOrder();

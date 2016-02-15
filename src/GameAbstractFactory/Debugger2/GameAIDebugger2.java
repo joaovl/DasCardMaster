@@ -1,6 +1,7 @@
 package GameAbstractFactory.Debugger2;
 
 import GameAbstractFactory.IAI;
+import GameAbstractFactory.IRules;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,60 +19,33 @@ public class GameAIDebugger2 implements IAI {
     }
 
 
-    public List<Integer> playGameDebugger(List<Integer> player){
-        Scanner user_input = new Scanner( System.in );
-
-        //TODO - This is completly wrong here.
-        //It is required to implement this in PLayer Class
-        List<Integer> player1 = new ArrayList<>(player.subList(0, 10));
-        List<Integer> player2 = new ArrayList<>(player.subList(10, 20));
-        List<Integer> player3 = new ArrayList<>(player.subList(20, 30));
-        List<Integer> player4 = new ArrayList<>(player.subList(30, 40));
+    public List<Integer> playGame(IRules objRules, List<List<Integer>> cardsShuffled){
+        //TODO - Find a more elegant way to present data here.
+        List<Integer> player1 = cardsShuffled.get(0);
+        List<Integer> player2 = cardsShuffled.get(1);
+        List<Integer> player3 = cardsShuffled.get(2);
+        List<Integer> player4 = cardsShuffled.get(3);
 
         //Start playing
         int teamA = 0, teamB = 0;
-        int cardHumanUser = 0 ,tempHumanValue = 0;
+        List<Integer> rulesAnalysis = null;
 
         for( int i = 0; i < 10; i++) {
 
-            //Ask user to pick a card
-            System.out.println("Which card would you like to play? (select Position 0 - 9 )");
-            //List cards
-            System.out.println(player1);
-            cardHumanUser = Integer.parseInt(user_input.next());
+            rulesAnalysis = objRules.validPlay(player1);
 
-
-            //TODO - This is a Rule Validation input
-            while ((cardHumanUser < 0) || (cardHumanUser > 9)) {
-                System.out.println("You cannot select an invalid position \n" +
-                        " (select Position 0 - 9 )");
-                System.out.println(player1);
-                cardHumanUser = Integer.parseInt(user_input.next());
-            }
-
-            tempHumanValue = player1.get(cardHumanUser);
-
-            //TODO - This is a Rule Validation value
-            // It was not used before
-            while (tempHumanValue == 0) {
-                System.out.println("You selected an invalid card");
-                cardHumanUser = Integer.parseInt(user_input.next());
-                tempHumanValue = player1.get(cardHumanUser);
-            }
-
-            System.out.println("card Selected is : " + tempHumanValue);
-
-            player1.set(cardHumanUser, 0);
-
-
-            if ((tempHumanValue + player3.get(i)) < (player2.get(i) + player4.get(i))) {
+            if ((rulesAnalysis.get(0) + player3.get(i)) < (player2.get(i) + player4.get(i))) {
                 teamB = teamB + 2;
-            } else if ((tempHumanValue + player3.get(i)) > (player2.get(i) + player4.get(i))) {
+            } else if ((rulesAnalysis.get(0) + player3.get(i)) > (player2.get(i) + player4.get(i))) {
                 teamA = teamA + 2;
             } else {
                 teamA = teamA++;
                 teamB = teamB++;
             }
+            player1.set(rulesAnalysis.get(1), 0);
+            player2.set(i, 0);
+            player3.set(i, 0);
+            player4.set(i, 0);
         }
         List<Integer> results = new ArrayList<>(MAX_TEAMS + 1);
 

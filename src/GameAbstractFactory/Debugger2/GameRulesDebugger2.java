@@ -1,15 +1,17 @@
 package GameAbstractFactory.Debugger2;
 
 import GameAbstractFactory.AbstractGameRules;
-import GameAbstractFactory.IRules;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Joao on 08/02/2016.
  */
 public class GameRulesDebugger2 extends AbstractGameRules {
 
+    public boolean SOLO_GAME = false;
     public static final int MAX_NUMBER_CARDS_GAME = 40;
     public static final int MAX_NUMBER_CARDS_PLAYER = 10;
     public static final int VALID_GAMES_PER_SESSION = 10;
@@ -41,6 +43,8 @@ public class GameRulesDebugger2 extends AbstractGameRules {
         return "Rules for Debugger2";
     }
 
+    public boolean soloGame() { return SOLO_GAME; }
+
     public String checkNumberOfPlayers(Integer numberOfPLayers){
 
         if ((MAX_NUMBER_OF_PLAYERS == MIN_NUMBER_OF_PLAYERS) && (MIN_NUMBER_OF_PLAYERS != numberOfPLayers)){
@@ -55,13 +59,46 @@ public class GameRulesDebugger2 extends AbstractGameRules {
     }
 
 
+    public List<Integer> validPlay(List<Integer> player){
+        Scanner user_input = new Scanner( System.in );
+        List<Integer> rulesResult = new ArrayList<Integer>();
+        int cardSelectedByHuman = 0;
+
+        //Ask user to pick a card
+        System.out.println("Which card would you like to play? (select Position 0 - 9 )");
+        //List cards
+        System.out.println(player);
+        cardSelectedByHuman = Integer.parseInt(user_input.next());
+
+        while ((cardSelectedByHuman < 0) || (cardSelectedByHuman > 9)) {
+            System.out.println("You cannot select an invalid position \n" +
+                    " (select Position 0 - 9 )");
+            System.out.println(player);
+            cardSelectedByHuman = Integer.parseInt(user_input.next());
+        }
+
+        int tempHumanValue = player.get(cardSelectedByHuman);
+
+        while (tempHumanValue == 0) {
+            System.out.println("You selected an invalid card");
+            System.out.println(player);
+            cardSelectedByHuman = Integer.parseInt(user_input.next());
+            tempHumanValue = player.get(cardSelectedByHuman);
+        }
+        rulesResult.add(0,tempHumanValue);
+        rulesResult.add(1,cardSelectedByHuman);
+
+        System.out.println("card Selected is : " + tempHumanValue);
+        return rulesResult;
+    }
+
     public String checkWhoWinnes(List<Integer> resultOfPlay){
 
         if(resultOfPlay.get(0) > resultOfPlay.get(1)) {
-            return "Team A is the winner with : " + resultOfPlay.get(0).toString() + " points";
+            return "Your and PLayer 3 team is the winner with : " + resultOfPlay.get(0).toString() + " points";
         }
         else if (resultOfPlay.get(0) < resultOfPlay.get(1)) {
-            return "Team B is the winner with : " + resultOfPlay.get(1).toString() + " points";
+            return "Player 2 and PLayer 4 team is the winner with : " + resultOfPlay.get(1).toString() + " points";
         }
         else {
             return "Team A and B draw with : " + resultOfPlay.get(1).toString() + " points";

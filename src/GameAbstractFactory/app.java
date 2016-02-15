@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class app {
     public static void main(String[] args) {
-        String whatToMake = "Debugger2";
+        String whatToMake = "Debugger";
 
 
         AbstractGameFactory factory = null;
@@ -21,41 +21,22 @@ public class app {
             factory = new GameFactoryDebugger2();
         }
 
-
         ICards objCards = factory.createCards();
         IRules objRules = factory.createRules();
         IAI objAI = factory.createAI();
-
 
         int numPlayers = objRules.getMaxNumberOfPlayers();
         System.out.println("Number of valid Players is: " + numPlayers);
 
         //ask for players
-        //TODO - This is hard codde to check that the function is working.
+        //TODO - This is hard coded to check that the function is working.
         String test = objRules.checkNumberOfPlayers(4);
         System.out.println(test);
 
-
-        Player numberOfPlayer = new Player().PlayerCreator(Boolean.FALSE);
-
-        //return X number of players according to the game
-        //System need to ask user how many human players are
-        //it is required to create AI players for remaining users in order to play the game.
-
-
-        //I want users to use cards and check if it is a valid play.
-
-        List<Integer> generateCards = objCards.getShuffledCards();
-        // assign cards to users
-
-
-        //AI needs to know which play is this one.
-        //THe number of plays per game is responsibility of RULES
+        List<List<Integer>> numberOfPlayer = new Player().PlayerCreator(objRules, objCards);
 
         //AI plays accordingly HUMAN or AUTOMATION
-        List<Integer> gamePlay = objAI.playGameDebugger(generateCards);
-
-        //During each play checks that rule is valid
+        List<Integer> gamePlay = objAI.playGame(objRules, numberOfPlayer);
 
         //returns winner
         String printResults = objRules.checkWhoWinnes(gamePlay);

@@ -9,9 +9,8 @@ public interface ICards {
 
     public List<Integer> getShuffledCards();
 
-//    public String getGameCards();
-//    public String toString();
-//    public List<Integer> cardsPerPlayer(int player);
-//    public int getCards();
+    //TODO - Need to add:
+    //List of cards Per Card name
+    //Value for each card
 
 }

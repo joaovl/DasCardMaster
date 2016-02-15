@@ -1,6 +1,7 @@
 package GameAbstractFactory.Debugger2;
 
 import GameAbstractFactory.ICards;
+import GameAbstractFactory.IRules;
 
 import java.util.ArrayList;
 import java.util.Collections;
