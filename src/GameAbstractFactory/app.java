@@ -10,7 +10,7 @@ import java.util.List;
  */
 public class app {
     public static void main(String[] args) {
-        String whatToMake = "Debugger";
+        String whatToMake = "Debugger2";
 
 
         AbstractGameFactory factory = null;
