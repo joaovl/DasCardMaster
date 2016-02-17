@@ -1,5 +1,6 @@
 package GameAbstractFactory.Debugger2;
 
+import GameAbstractFactory.AbstractGameRules;
 import GameAbstractFactory.IAI;
 import GameAbstractFactory.IRules;
 
@@ -10,7 +11,7 @@ import java.util.Scanner;
 /**
  * Created by Joao on 08/02/2016.
  */
-public class GameAIDebugger2 implements IAI {
+public class GameAIDebugger2 implements IAI<AbstractGameRules> {
 
     private static final int MAX_TEAMS     = 2;
 
@@ -19,7 +20,7 @@ public class GameAIDebugger2 implements IAI {
     }
 
 
-    public List<Integer> playGame(IRules objRules, List<List<Integer>> cardsShuffled){
+    public List<Integer> playGame(AbstractGameRules objRules, List<List<Integer>> cardsShuffled){
         //TODO - Find a more elegant way to present data here.
         List<Integer> player1 = cardsShuffled.get(0);
         List<Integer> player2 = cardsShuffled.get(1);
@@ -47,7 +48,7 @@ public class GameAIDebugger2 implements IAI {
             player3.set(i, 0);
             player4.set(i, 0);
         }
-        List<Integer> results = new ArrayList<>(MAX_TEAMS + 1);
+        List<Integer> results = new ArrayList<Integer>(MAX_TEAMS + 1);
 
         results.add(teamA);
         results.add(teamB);
