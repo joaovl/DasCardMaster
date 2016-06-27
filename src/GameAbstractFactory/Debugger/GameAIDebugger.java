@@ -1,7 +1,11 @@
-package GameAbstractFactory;
+package GameAbstractFactory.Debugger;
+
+import GameAbstractFactory.IAI;
+import GameAbstractFactory.IRules;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  * Created by Joao on 07/02/2016.
@@ -14,17 +18,15 @@ public class GameAIDebugger implements IAI {
         return "AI for Sueca game";
     }
 
-    public List<Integer> playGameDebugger(List<Integer> test){
-        //show what we created:
-        List<Integer> player1 = test.subList(0, 10);
-        List<Integer> player2 = test.subList(10, 20);
-        List<Integer> player3 = test.subList(20, 30);
-        List<Integer> player4 = test.subList(30, 40);
-        System.out.println(player1);
-        System.out.println(player2);
-        System.out.println(player3);
-        System.out.println(player4);
+    public List<Integer> playGame(IRules objRules, List<List<Integer>> cardsShuffled){
+        Scanner user_input = new Scanner( System.in );
 
+        //TODO - This is completly wrong here.
+        //It is required to implement this in PLayer Class
+        List<Integer> player1 = cardsShuffled.get(0);
+        List<Integer> player2 = cardsShuffled.get(1);
+        List<Integer> player3 = cardsShuffled.get(2);
+        List<Integer> player4 = cardsShuffled.get(3);
         //Start playing
         int teamA = 0, teamB = 0;
 

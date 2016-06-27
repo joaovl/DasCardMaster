@@ -8,7 +8,11 @@ import java.util.List;
 public interface IAI {
 
 //    public String getGameAI();
-    public List<Integer> playGameDebugger(List<Integer> test);
+    public List<Integer> playGame(IRules objRules, List<List<Integer>> test);
+
+    //TODO - Implement AI only for Automated users,
+    // Human players need to be implemented in proper place
+
 
 
 }

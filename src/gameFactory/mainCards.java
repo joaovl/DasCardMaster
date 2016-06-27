@@ -71,7 +71,7 @@
 //     */
 //    public static void main(String[] args) {
 //
-//        GameFactory app = new GameFactory();
+//        GameFactoryDebugger app = new GameFactoryDebugger();
 //
 //        System.out.println("Elf AbstractFactory");
 //        IGameFactory elfKingdomFactory;
